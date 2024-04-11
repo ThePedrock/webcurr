@@ -8,8 +8,31 @@
   </head>
   <body>
     <div class="wholeDocument">
-      <div class="curriculum">
-        <div class="nav">
+      <div class="topNavBarDiv">
+        <nav class="topNavBar">
+          <ul id="id_topNavBar" class="topNavBarList">
+            <!-- <li class="topNavBarElement">
+              <div>Curriculo</div>
+            </li>
+            <li class="topNavBarElement">
+              <div>Portfolio</div>
+            </li>
+            <li class="topNavBarElement">
+              <div>Certificados</div>
+            </li>
+            <li class="topNavBarElement">
+              <div>Contacto</div>
+            </li>
+            <li class="topNavBarElement">
+              <img src="./resources/es.png" alt="spanish" title="spanish" onclick="switchToSpanish()">
+              <img src="./resources/en.png" alt="english" title="english" onclick="switchToEnglish()">                  
+            </li> -->
+          </ul>
+        </nav>
+      </div>
+
+      <div id="id_curriculum" class="curriculum">
+        <div id="id_curriculum_left_bar" class="nav">
           <div class="avatar">
             <img src="./resources/photo.jpg" alt="userAvatar" class="userImage">
           </div>
@@ -45,7 +68,7 @@
           <div id="id_skill" class="skill"></div>
         </div>
 
-        <div class="content">
+        <div id="id_content" class="content">
           
           <div class="identity">
             <div id="id_name" class="name">
@@ -53,37 +76,96 @@
             <div id="id_title" class="title">
             </div>          
           </div>
-          
-          <div class="topNavBarDiv">
-            <nav class="topNavBar">
-              <ul class="topNavBarList">
-                <li class="topNavBarElement">
-                  <img src="./resources/es.png" alt="spanish" title="spanish" onclick="switchToSpanish()">
-                  <img src="./resources/en.png" alt="english" title="english" onclick="switchToEnglish()">                  
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="workExperience">
+
+          <div id="id_workExperience" class="workExperience">
             <div id="id_we_title" class="we_title"></div>
             <div id="id_we_list" class="we_list">
             </div>
           </div>
 
-          <div class="education">
+          <div id="id_education" class="education">
             <div id="id_ed_title" class="ed_title"></div>
             <div id="id_ed_list" class="ed_list">
             </div>
           </div>          
 
-          <div class="language">
+          <div id="id_language" class="language">
             <div id="id_ln_title" class="ln_title"></div>
             <div id="id_ln_list" class="ln_list">
             </div>
           </div>
 
-        </div>        
+        </div>
+        
       </div>
+
+      <div id="id_portfolio" class="portfolio">
+        <div id="id_portfolio_container" class="porfolioContainer">
+          <!-- <div class="projectCard">
+            <div class="projectWrap">
+              <div class="projectCardContent">
+                <div class="projectCardName">TEST</div>
+                <div class="projectCardSkills"><span>skill1</span><span>skill2</span></div>
+                <div class="projectCardButtons"><button class="demoButton">DEMO</button><button class="repositoryButton">REPOSITORY</button></button></div>
+              </div>
+            </div>
+          </div> -->
+        </div>          
+      </div>
+
+      <div id="id_certificates" class="certificates">    
+      </div>      
+
+      <div id="id_contact" class="contactContent">
+        <div class="contact_form">
+          <div class="formulario">			
+            <h1 id="id_form_title">Contacto</h1>
+              <form action="https://formspree.io/f/xjvnabgl" method="post">				
+                <p>
+                  <label id="id_form_name" for="name" class="nameInput">Nombre
+                    <span class="mandatory">*</span>
+                  </label>
+                  <input type="text" name="nameInput" id="id_form_nameInput" required="mandatory" placeholder="Escribe tu nombre">
+                </p>
+              
+                <p>
+                  <label id="id_form_email" for="email" class="emailInput">Email
+                    <span class="mandatory">*</span>
+                  </label>
+                  <input type="email" name="emailInput" id="id_form_emailInput" required="mandatory" placeholder="Escribe tu Email">
+                </p>
+            
+                <p>
+                  <label id="id_form_phone" for="phone" class="phoneInput">Teléfono
+                  </label>
+                  <input type="tel" name="phoneInput" id="id_form_phoneInput" placeholder="Escribe tu teléfono">
+                </p>			
+              
+                <p>
+                  <label id="id_form_subject" for="subject" class="subjectInput">Asunto
+                    <span class="mandatory">*</span>
+                  </label>
+                  <input type="text" name="subjectInput" id="id_form_subjectInput" required="mandatory" placeholder="Escribe un asunto">
+                </p>		
+              
+                <p>
+                  <label id="id_form_message" for="message" class="messageInput">Mensaje
+                    <span class="mandatory">*</span>
+                  </label>                     
+                  <textarea name="messageInput" class="messageInput" id="id_form_messageInput" required="mandatory" placeholder="Deja aquí tu comentario..."></textarea> 
+                </p>	  								
+              
+                <button id="id_form_submit" type="submit" name="formSubmit"><p id="id_form_submit_text">Enviar</p></button>
+
+                <p class="warning">
+                  <span class="mandatory"> * </span>
+                  <span id="id_form_mandatory_hint">los campos son mandatorys.</span>                  
+                </p>
+              </form>
+          </div>	
+        </div>
+      </div>
+
       <footer class="footer">
         <p>Copyright © WebCurriculum is Free Software released under the GNU General Public License</p>
       </footer>

@@ -1,4 +1,5 @@
 /// NEEDED VARIABLES ///
+var page = 0;
 
 var language = "english";   // language by default //
 const curriculumHeaders = {
@@ -15,6 +16,50 @@ const curriculumHeaders = {
         "workExperience": "Experiencia Profesional",
         "education": "Formación Académica",
         "languages": "Idioma"
+    }
+}
+
+const navBarHeaders = {
+    "english": [{"name": "Curriculum", "link": "", "value": 0},
+        {"name": "Portfolio", "link": "#portfolio", "value": 1}, 
+    //    {"name": "Certificates", "link": "#certificates", "value": 2}, 
+        {"name": "Contact", "link": "#contact", "value": 3}],
+    "spanish": [{"name": "Currículo", "link": "", "value": 0},
+        {"name": "Portfolio", "link": "#portfolio", "value": 1}, 
+    //    {"name": "Certificados", "link": "#certificates", "value": 2}, 
+        {"name": "Contacto", "link": "#contact", "value": 3}]
+}
+
+const contactLabels = {
+    "english": {
+        "title": "Contact",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "subject": "Subject",
+        "message": "Message",
+        "submit": "Submit",
+        "namePlaceholder": "Enter name",
+        "emailPlaceholder": "Enter email",
+        "phonePlaceholder": "Enter phone",
+        "subjectPlaceholder": "Enter subject",
+        "messagePlaceholder": "Enter your comment...",
+        "mandatoryHint": "Fields are mandatory."
+    },
+    "spanish": {
+        "title": "Contacto",
+        "name": "Nombre",
+        "email": "Email",
+        "phone": "Teléfono",
+        "subject": "Asunto",
+        "message": "Mensaje",
+        "submit": "Enviar",
+        "namePlaceholder": "Escribe tu nombre",
+        "emailPlaceholder": "Escribe tu Email",
+        "phonePlaceholder": "Escribe tu teléfono",
+        "subjectPlaceholder": "Escribe un asunto",
+        "messagePlaceholder": "Deja aquí tu comentario...",
+        "mandatoryHint": "Los campos son obligatorios."
     }
 }
 
@@ -189,6 +234,67 @@ const dataJSON = {
             "year": "",
             "certification": "Lengua materna"
         }
+    }],
+    "projects": [{
+        "english": {
+            "title": "TETRIS",
+            "backgroundImage": "https://raw.githubusercontent.com/ThePedrock/tetris/main/resources/screenshot01.png",
+            "skills": ["Python"],
+            "demoURL": "",
+            "repositoryURL": "https://github.com/ThePedrock/tetris"
+        },
+        "spanish": {
+            "title": "TETRIS",
+            "backgroundImage": "https://raw.githubusercontent.com/ThePedrock/tetris/main/resources/screenshot01.png",
+            "skills": ["Python"],
+            "demoURL": "",
+            "repositoryURL": "https://github.com/ThePedrock/tetris"
+        }
+    },{
+        "english": {
+            "title": "POKALC",
+            "backgroundImage": "https://raw.githubusercontent.com/ThePedrock/pokalc/main/resources/demo.png",
+            "skills": ["Python"],
+            "demoURL": "",
+            "repositoryURL": "https://github.com/ThePedrock/pokalc"
+        },
+        "spanish": {
+            "title": "POKALC",
+            "backgroundImage": "https://raw.githubusercontent.com/ThePedrock/pokalc/main/resources/demo.png",
+            "skills": ["Python"],
+            "demoURL": "",
+            "repositoryURL": "https://github.com/ThePedrock/pokalc"
+        }
+    },{
+        "english": {
+            "title": "sudokuSolver",
+            "backgroundImage": "https://raw.githubusercontent.com/ThePedrock/sudokuSolver/main/src/sudokuSolver/resources/demo.png",
+            "skills": ["Java"],
+            "demoURL": "",
+            "repositoryURL": "https://github.com/ThePedrock/sudokuSolver"
+        },
+        "spanish": {
+            "title": "sudokuSolver",
+            "backgroundImage": "https://raw.githubusercontent.com/ThePedrock/sudokuSolver/main/src/sudokuSolver/resources/demo.png",
+            "skills": ["Java"],
+            "demoURL": "",
+            "repositoryURL": "https://github.com/ThePedrock/sudokuSolver"
+        }
+    },{
+        "english": {
+            "title": "Finantial Indicators",
+            "backgroundImage": "https://raw.githubusercontent.com/ThePedrock/indicadoresFinancieros/master/src/main/resources/demo.png",
+            "skills": ["Java"],
+            "demoURL": "",
+            "repositoryURL": "https://github.com/ThePedrock/indicadoresFinancieros"
+        },
+        "spanish": {
+            "title": "indicadoresFinancieros",
+            "backgroundImage": "https://raw.githubusercontent.com/ThePedrock/indicadoresFinancieros/master/src/main/resources/demo.png",
+            "skills": ["Java"],
+            "demoURL": "",
+            "repositoryURL": "https://github.com/ThePedrock/indicadoresFinancieros"
+        }
     }]
 }
 
@@ -213,6 +319,51 @@ function populateHeaders() {
 
     contact.appendChild(contactTitle);
     skills.appendChild(skillsTitle);
+}
+
+function populateNavigationBar() {
+    const navigationBar = document.querySelector('#id_topNavBar');
+    const navBarElements = navBarHeaders[language];
+
+    navBarElements.forEach(element => {
+        const li = document.createElement('li');
+        const div = document.createElement('div');
+        const a = document.createElement('a');
+        a.textContent = element.name;
+        a.href = element.link;                
+        
+        /*div.onclick = function() {
+            page = element.value;
+            alert(page);
+            switchContent();
+        }*/
+
+        li.classList.add('topNavBarElement');
+        div.appendChild(a);
+        li.appendChild(div);
+        navigationBar.appendChild(li);
+    })
+
+    const li = document.createElement('li');
+    const img1 = document.createElement('img');
+    const img2 = document.createElement('img');
+
+    img1.src = "./resources/es.png";
+    img1.alt = "spanish";
+    img1.title = "spanish";
+    img1.onclick = switchToSpanish;
+
+    img2.src = "./resources/en.png";
+    img2.alt = "english";
+    img2.title = "english";
+    img2.onclick = switchToEnglish;
+
+    li.classList.add('topNavBarElement');
+
+    li.appendChild(img1);
+    li.appendChild(img2);
+    navigationBar.appendChild(li);
+
 }
 
 function populatePerson() {
@@ -368,6 +519,11 @@ function emptyHeaders() {
     skills.innerHTML = '';
 }
 
+function emptyNavigationBar() {
+    const navigationBar = document.querySelector('#id_topNavBar');
+    navigationBar.innerHTML = '';    
+}
+
 function emptyPerson() {
     const personName = document.querySelector('#id_name');
     const personTitle = document.querySelector('#id_title');
@@ -402,6 +558,7 @@ function emptyDescription() {
 
 function populateCurriculum() {
     populateHeaders();
+    populateNavigationBar();
     populatePerson();
     populateDescription();
     populateSkillList();
@@ -412,6 +569,7 @@ function populateCurriculum() {
 
 function emptyCurriculum() {
     emptyHeaders();
+    emptyNavigationBar();
     emptyPerson();
     emptyDescription();
     emptySkillList();
@@ -420,20 +578,257 @@ function emptyCurriculum() {
     emptyLanguage();
 }
 
+function populateProjects() {
+    const projectContainer = document.querySelector('#id_portfolio_container');
+
+    dataJSON.projects.forEach(project => {
+        projectContainer.appendChild(projectCardBuilder(project));
+    })
+}
+
+function emptyProjects() {
+    const projectContainer = document.querySelector('#id_portfolio_container');
+    projectContainer.innerHTML = '';    
+}
+
+function populateContactForm() {
+    const formTitle = document.querySelector('#id_form_title');
+    const formName = document.querySelector('#id_form_name');
+    const formEmail = document.querySelector('#id_form_email');
+    const formPhone = document.querySelector('#id_form_phone');
+    const formSubject = document.querySelector('#id_form_subject');
+    const formMessage = document.querySelector('#id_form_message');
+    const formSubmit = document.querySelector('#id_form_submit_text');
+    const formNameInput = document.querySelector('#id_form_nameInput');
+    const formEmailInput = document.querySelector('#id_form_emailInput');
+    const formPhoneInput = document.querySelector('#id_form_phoneInput');
+    const formSubjectInput = document.querySelector('#id_form_subjectInput');
+    const formMessageInput = document.querySelector('#id_form_messageInput');
+    const formMandatoryHint = document.querySelector('#id_form_mandatory_hint');
+
+    formTitle.textContent = contactLabels[language].title;
+    formName.textContent = contactLabels[language].name;
+    formEmail.textContent = contactLabels[language].email;
+    formPhone.textContent = contactLabels[language].phone;
+    formSubject.textContent = contactLabels[language].subject;
+    formMessage.textContent = contactLabels[language].message;
+    formSubmit.textContent = contactLabels[language].submit;
+
+    formNameInput.placeholder = contactLabels[language].namePlaceholder;
+    formEmailInput.placeholder = contactLabels[language].emailPlaceholder;
+    formPhoneInput.placeholder = contactLabels[language].phonePlaceholder;
+    formSubjectInput.placeholder = contactLabels[language].subjectPlaceholder;
+    formMessageInput.placeholder = contactLabels[language].messagePlaceholder;
+
+    formMandatoryHint.textContent = contactLabels[language].mandatoryHint;
+}
+
+function emptyContactForm() {
+    const formTitle = document.querySelector('#id_form_title');
+    const formName = document.querySelector('#id_form_name');
+    const formEmail = document.querySelector('#id_form_email');
+    const formPhone = document.querySelector('#id_form_phone');
+    const formSubject = document.querySelector('#id_form_subject');
+    const formMessage = document.querySelector('#id_form_message');
+    const formSubmit = document.querySelector('#id_form_submit_text');
+    const formNameInput = document.querySelector('#id_form_nameInput');
+    const formEmailInput = document.querySelector('#id_form_emailInput');
+    const formPhoneInput = document.querySelector('#id_form_phoneInput');
+    const formSubjectInput = document.querySelector('#id_form_subjectInput');
+    const formMessageInput = document.querySelector('#id_form_messageInput');
+    const formMandatoryHint = document.querySelector('#id_form_mandatory_hint');
+
+    formTitle.textContent = '';
+    formName.textContent = '';
+    formEmail.textContent = '';
+    formPhone.textContent = '';
+    formSubject.textContent = '';
+    formMessage.textContent = '';
+    formSubmit.textContent =  '';
+
+    formNameInput.placeholder = '';
+    formEmailInput.placeholder = '';
+    formPhoneInput.placeholder = '';
+    formSubjectInput.placeholder = '';
+    formMessageInput.placeholder = '';
+
+    formMandatoryHint.textContent = '';    
+}
+
+function switchContent() {
+    const content = document.querySelector('#id_content');
+    content.classList.remove("fitScreen");    
+
+    const curriculumLeftBar = document.querySelector('#id_curriculum_left_bar'); 
+    curriculumLeftBar.classList.remove("hidden");
+    curriculumLeftBar.classList.add("hidden");
+
+    const curriculumWorkExperience = document.querySelector('#id_workExperience');
+    const curriculumEducation = document.querySelector('#id_education');
+    const curriculumLanguage = document.querySelector('#id_language');
+    curriculumWorkExperience.classList.remove("hidden");
+    curriculumEducation.classList.remove("hidden");
+    curriculumLanguage.classList.remove("hidden");
+    curriculumWorkExperience.classList.add("hidden");
+    curriculumEducation.classList.add("hidden");
+    curriculumLanguage.classList.add("hidden");
+    
+    const contact = document.querySelector('#id_contact');
+    contact.classList.remove("hidden");
+    contact.classList.add("hidden");
+
+    switch(page) {
+        case 0:
+            content.classList.remove("fitScreen");
+            curriculumLeftBar.classList.remove("hidden");
+            curriculumWorkExperience.classList.remove("hidden");
+            curriculumEducation.classList.remove("hidden");
+            curriculumLanguage.classList.remove("hidden");
+            break;
+        case 1:
+            content.classList.add("fitScreen");
+            break;
+        case 2:
+            content.classList.add("fitScreen");
+            break;
+        case 3:            
+            content.classList.add("fitScreen");
+            contact.classList.remove("hidden");
+            break;
+        default:
+    }
+}
+
+/// FUNCTIONS ///
+
+function projectCardBuilder(projectJSON) {
+    const projectCard = document.createElement('div');
+    const projectWrap = document.createElement('div');
+    const projectCardContent = document.createElement('div');
+    const projectCardName = document.createElement('div');
+    const projectCardSkills = document.createElement('div');
+    const projectCardButtons = document.createElement('div');
+
+    projectCard.classList.add("projectCard");
+    projectWrap.classList.add("projectWrap");
+    projectCardContent.classList.add("projectCardContent");
+    projectCardName.classList.add("projectCardName");
+    projectCardSkills.classList.add("projectCardSkills");
+    projectCardButtons.classList.add("projectCardButtons");
+
+    projectCard.style.backgroundImage = "url(" + projectJSON[language].backgroundImage + ")";
+
+    projectCardName.textContent = projectJSON[language].title;
+
+    projectJSON[language].skills.forEach(skill => {
+        const aSkill = document.createElement('span');
+        aSkill.textContent = skill;
+        projectCardSkills.appendChild(aSkill);
+    });
+
+    const demoButton = document.createElement('button');
+    const repositoryButton = document.createElement('button');
+    
+    //demoButton.textContent = "DEMO";
+    if (language=="spanish") {
+        repositoryButton.textContent = "REPOSITORIO"
+    } else {
+        repositoryButton.textContent = "REPOSITORY"
+    }
+    //repositoryButton.href = projectJSON[language].repositoryURL;
+    repositoryButton.addEventListener("click", function() {
+        var url = projectJSON[language].repositoryURL;
+      
+        window.open(url, "_blank");
+      });
+
+    //demoButton.classList.add("demoButton");
+    repositoryButton.classList.add("repositoryButton");
+
+    //projectCardButtons.appendChild(demoButton);
+    projectCardButtons.appendChild(repositoryButton);
+
+    projectCardContent.appendChild(projectCardName);
+    projectCardContent.appendChild(projectCardSkills);
+    projectCardContent.appendChild(projectCardButtons);
+
+    projectWrap.appendChild(projectCardContent);
+
+    projectCard.appendChild(projectWrap);
+
+    return projectCard;
+}
+
+/// LISTENERS ///
+
+function handleRoute() {
+    var route = window.location.hash;
+    //alert("handleRoute");
+    const curriculum = document.querySelector('#id_curriculum');
+    curriculum.classList.remove("hidden");
+    curriculum.classList.add("hidden");
+
+    const portfolio = document.querySelector('#id_portfolio');
+    portfolio.classList.remove("portfolio");
+    portfolio.classList.remove("hidden");
+    portfolio.classList.add("hidden");
+    
+    const certificates = document.querySelector('#id_certificates');
+    certificates.classList.remove("hidden");
+    certificates.classList.add("hidden");
+
+    const contact = document.querySelector('#id_contact');
+    contact.classList.remove("hidden");
+    contact.classList.add("hidden");    
+
+    switch (route) {
+        case '':
+            curriculum.classList.remove("hidden");
+            break;
+        case '#portfolio':
+            portfolio.classList.remove("hidden");
+            portfolio.classList.add("portfolio");
+            //portfolio.classList.remove("hidden");
+            break;
+        case '#certificates':
+            certificates.classList.remove("hidden");
+            break;
+        case '#contact':
+            contact.classList.remove("hidden");
+            break;
+        default:
+    }
+}
+
+/////////////////
+
 /// LANGUAGE SWITCH FUNCTIONS ///
 
 function switchToSpanish() {
     language = "spanish";
     emptyCurriculum();
+    emptyProjects();
+    emptyContactForm();
     populateCurriculum();
+    populateProjects();
+    populateContactForm();
 }
 
 function switchToEnglish() {
     language = "english";
     emptyCurriculum();
-    populateCurriculum();    
+    emptyProjects();
+    emptyContactForm();
+    populateCurriculum();
+    populateProjects();
+    populateContactForm();    
 }
 
 /// INITATE CODE ///
 
 populateCurriculum();
+populateProjects();
+populateContactForm();
+
+window.addEventListener('load', handleRoute);
+window.addEventListener('hashchange', handleRoute);
