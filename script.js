@@ -22,11 +22,11 @@ const curriculumHeaders = {
 const navBarHeaders = {
     "english": [{"name": "Curriculum", "link": "", "value": 0},
         {"name": "Portfolio", "link": "#portfolio", "value": 1}, 
-    //    {"name": "Certificates", "link": "#certificates", "value": 2}, 
+        {"name": "Certificates", "link": "#certificates", "value": 2}, 
         {"name": "Contact", "link": "#contact", "value": 3}],
     "spanish": [{"name": "Currículo", "link": "", "value": 0},
         {"name": "Portfolio", "link": "#portfolio", "value": 1}, 
-    //    {"name": "Certificados", "link": "#certificates", "value": 2}, 
+        {"name": "Certificados", "link": "#certificates", "value": 2}, 
         {"name": "Contacto", "link": "#contact", "value": 3}]
 }
 
@@ -294,6 +294,40 @@ const dataJSON = {
             "skills": ["Java"],
             "demoURL": "",
             "repositoryURL": "https://github.com/ThePedrock/indicadoresFinancieros"
+        }
+    }],
+    "certificates": [{
+        "english": {
+            "title": "Multiplatform Application Development Higher Vocational Training Degree",
+            "backgroundImage": "./resources/certificates/multiplatformthm.png",
+            "certificateURL": "./resources/certificates/1713173286.pdf"
+        },
+        "spanish": {
+            "title": "Ciclo superior en Desarrollo de Aplicaciones Multiplataforma",
+            "backgroundImage": "./resources/certificates/multiplatformthm.png",
+            "certificateURL": "./resources/certificates/1713173286.pdf"
+        }
+    },{
+        "english": {
+            "title": "Microservices: Designing Highly Scalable Systems",
+            "backgroundImage": "./resources/certificates/microservicesthm.png",
+            "certificateURL": "./resources/certificates/Microservices.pdf"
+        },
+        "spanish": {
+            "title": "Microservicios: Diseño de Sistemas Altamente Escalables",
+            "backgroundImage": "./resources/certificates/microservicesthm.png",
+            "certificateURL": "./resources/certificates/Microservices.pdf"
+        }
+    },{
+        "english": {
+            "title": "SOLID Principles: Introducing Software Architecture & Design",
+            "backgroundImage": "./resources/certificates/solidthm.png",
+            "certificateURL": "./resources/certificates/SOLID.pdf"
+        },
+        "spanish": {
+            "title": "Principios SOLID: Introducción a la Arquitectura y Diseño de Software",
+            "backgroundImage": "./resources/certificates/solidthm.png",
+            "certificateURL": "./resources/certificates/SOLID.pdf"
         }
     }]
 }
@@ -591,6 +625,19 @@ function emptyProjects() {
     projectContainer.innerHTML = '';    
 }
 
+function populateCertificates() {
+    const projectContainer = document.querySelector('#id_certificates_container');
+
+    dataJSON.certificates.forEach(certificate => {
+        projectContainer.appendChild(certificateBuilder(certificate));
+    })
+}
+
+function emptyCertificates() {
+    const projectContainer = document.querySelector('#id_certificates_container');
+    projectContainer.innerHTML = '';
+}
+
 function populateContactForm() {
     const formTitle = document.querySelector('#id_form_title');
     const formName = document.querySelector('#id_form_name');
@@ -759,6 +806,30 @@ function projectCardBuilder(projectJSON) {
     return projectCard;
 }
 
+function certificateBuilder(projectJSON) {
+    const certificate = document.createElement('div');
+    const certificateWrap = document.createElement('div');
+    const certificateContent = document.createElement('div');
+    const certificateName = document.createElement('div');
+
+    certificate.classList.add("certificate");
+    certificateWrap.classList.add("certificateWrap");
+    certificateContent.classList.add("certificateContent");
+    certificateName.classList.add("certificateName");
+
+    certificate.style.backgroundImage = "url(" + projectJSON[language].backgroundImage + ")";
+    certificateContent.addEventListener("click", function() {
+        window.open(projectJSON[language].certificateURL, '_blank');
+    })    
+    certificateName.textContent = projectJSON[language].title;
+
+    certificateContent.appendChild(certificateName);
+    certificateWrap.appendChild(certificateContent);
+    certificate.appendChild(certificateWrap);
+
+    return certificate;    
+}
+
 /// LISTENERS ///
 
 function handleRoute() {
@@ -808,9 +879,11 @@ function switchToSpanish() {
     language = "spanish";
     emptyCurriculum();
     emptyProjects();
+    emptyCertificates();
     emptyContactForm();
     populateCurriculum();
     populateProjects();
+    populateCertificates();
     populateContactForm();
 }
 
@@ -818,9 +891,11 @@ function switchToEnglish() {
     language = "english";
     emptyCurriculum();
     emptyProjects();
+    emptyCertificates();
     emptyContactForm();
     populateCurriculum();
     populateProjects();
+    populateCertificates();
     populateContactForm();    
 }
 
@@ -828,6 +903,7 @@ function switchToEnglish() {
 
 populateCurriculum();
 populateProjects();
+populateCertificates();
 populateContactForm();
 
 window.addEventListener('load', handleRoute);

@@ -1,3 +1,8 @@
+/* Fuentes */
+
+/* LORA */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
 /* Colores */
 :root {
   --primary-color: #00A6D6;
@@ -8,6 +13,7 @@
   --curriculum-background-color: #464950;
   --navigation-background-color: #F5EAE4;
   --content-background-color: #FFFFFF;
+  --upper-bar-navigation: #303236;
 
   --title-text-color: #04136B;
   --text-color-01: #17085b;
@@ -19,6 +25,12 @@
 	--text-color: #04136B;
 	--placeholder-color: #464950;
 	--focused-color: #04136B;
+
+  --electricblue-color: #006292FF;
+  --electricblue-color-off: #00629200;
+  --white-color: #FFFFFF;
+
+  --strong-font: 'Lora',serif;
 }
 
 /* Estilos para el encabezado */
@@ -626,6 +638,15 @@ h3 {
 
 .topNavBarList {
   width: 100%;
+  background-color: var(--upper-bar-navigation);
+  padding: 5px;
+
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  text-align: center;
+  z-index: 1000; */
 }
 
 .topNavBarElement {
@@ -742,6 +763,24 @@ h3 {
   }
 }
 
+@keyframes certificateFadeOut {
+  from {
+    background-color: var(--electricblue-color-off);
+  }
+  to {
+    background-color: var(--electricblue-color);
+  }
+}
+
+@keyframes certificateFadeIn {
+  from {
+    background-color: var(--electricblue-color);
+  }
+  to {
+    background-color: var(--electricblue-color-off);
+  }
+}
+
 .projectCardContent {
   display: flex;
   width: 100%;
@@ -822,8 +861,72 @@ h3 {
 /* CERTIFICATES */
 
 .certificates {
-  height: 85vh;
+  /* height: 85vh; */
+  height: 100%;
+  min-height: 85vh;
   background-color: var(--background-color-001);  
+}
+
+.certificatesContainer {
+  margin: 5rem;
+  padding: 2rem;
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
+.certificate {
+  position: relative;
+  width: 45rem;
+  height: 30rem;
+  background-color: var(--navigation-background-color);
+  border-radius: 0.5rem;
+  background-size: 125%;
+  background-position: center;
+  animation: zoomIn 0.3s ease-out forwards;
+}
+
+.certificate:hover {
+  animation: zoomOut 0.3s ease-out forwards;
+}
+
+.certificateWrap {
+  content: ""; /* Necesario para que el ::before se muestre */
+  position: absolute; /* Se superpone sobre la imagen de fondo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: certificateFadeOut 0.3s ease-out forwards;  
+}
+
+.certificateWrap:hover {
+  animation: certificateFadeIn 0.3s ease-out forwards;
+}
+
+.certificateContent {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  opacity: 1;
+}
+
+.certificateContent:hover {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.certificateName {
+  width: auto;
+  height: 100%;
+  font-size: 2.5rem;
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--strong-font);
 }
 
 /* CONTACT FORM */
@@ -833,7 +936,6 @@ h3 {
 	font-family: 'Noto Sans', sans-serif;
   background-color: var(--background-color-001); 
 }
-
 
 .contact_form{	
 	width: 460px; 
