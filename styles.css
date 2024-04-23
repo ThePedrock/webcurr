@@ -10,11 +10,15 @@
   --background-color: #F2F6F8;
   --text-color: #333333;
 
-  --curriculum-background-color: #464950;
-  --navigation-background-color: #F5EAE4;
-  --content-background-color: #FFFFFF;
-  --upper-bar-navigation: #303236;
+  /* --curriculum-background-color: #464950; */
+  /* --upper-bar-navigation: #303236; */
+  --curriculum-background-color: #006292FF;
+  --upper-bar-navigation: #004C71;
 
+  /* --navigation-background-color: #F5EAE4; */
+  --navigation-background-color: #bce6f3;
+  --content-background-color: #FFFFFF;
+  
   --title-text-color: #04136B;
   --text-color-01: #17085b;
   --line-separator-color: #333333;
@@ -26,9 +30,17 @@
 	--placeholder-color: #464950;
 	--focused-color: #04136B;
 
-  --electricblue-color: #006292FF;
+  --electricblue-color: #004C71;
   --electricblue-color-off: #00629200;
   --white-color: #FFFFFF;
+
+  --demo-button-background-color: #53917c;
+  --demo-button-color: #c1f9ac;
+  --demo-button-border-color: #c1f9ac;
+  --repository-button-background-color: #537391;
+  --repository-button-color: #acd2f9;
+  --repository-button-border-color: #acd2f9;  
+
 
   --strong-font: 'Lora',serif;
 }
@@ -39,6 +51,10 @@ header {
   color: var(--background-color);
   text-align: center;
   padding: 2rem;
+}
+
+body {
+  margin: 0%;
 }
 
 /* Estilos para el pie de página */
@@ -617,7 +633,7 @@ h3 {
 
 .topNavBarDiv {
   width: 100%;
-  background-color: var(--curriculum-background-color); 
+  background-color: var(--upper-bar-navigation); 
   border: solid 0.1rem;
   border-color: var(--curriculum-background-color);
 }
@@ -641,18 +657,19 @@ h3 {
   background-color: var(--upper-bar-navigation);
   padding: 5px;
 
-  /* position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   padding: 5px;
   text-align: center;
-  z-index: 1000; */
+  z-index: 1000;
+  margin: 0%;
 }
 
 .topNavBarElement {
   width: 15%;
   color: var(--content-background-color);
-  font-size: 2rem;
+  font-size: 3rem;
   display: flex;
   justify-content: space-evenly;
   align-content: center;
@@ -678,7 +695,7 @@ h3 {
 
 .portfolio {
   height: 85vh;
-  background-color: var(--background-color-001);
+  background-color: var(--curriculum-background-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -798,7 +815,7 @@ h3 {
   width: auto;
   height: 50%;
   font-size: 3rem;
-  color: #ffffff;
+  color: var(--white-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -845,17 +862,17 @@ h3 {
 .demoButton {
   font-size: 2rem;
   height: 45%;
-  background-color: #53917c;
-  color: #c1f9ac;
-  border-color: #c1f9ac;
+  background-color: var(--demo-button-background-color);
+  color: var(--demo-button-color);
+  border-color: var(--demo-button-border-color);
 }
 
 .repositoryButton {
   font-size: 2rem;
   height: 45%;
-  background-color: #537391;
-  color: #acd2f9;
-  border-color: #acd2f9;
+  background-color: var(--repository-button-background-color);
+  color: var(--repository-button-color);
+  border-color: var(--repository-button-border-color);
 }
 
 /* CERTIFICATES */
@@ -864,7 +881,7 @@ h3 {
   /* height: 85vh; */
   height: 100%;
   min-height: 85vh;
-  background-color: var(--background-color-001);  
+  background-color: var(--curriculum-background-color);  
 }
 
 .certificatesContainer {
@@ -991,17 +1008,20 @@ h3 {
 	margin-bottom: 20px; 
 	margin-top: 10px; 	
 	text-transform: uppercase;
-	background-color: var(--background-color-001); 
-	border-color: var(--background-color-001); 
+	background-color: var(--electricblue-color); 
+	border-color: var(--electricblue-color); 
 	border-style: solid; 
-	border-radius: 10px;	
+	border-radius: 10px;
 	width: 420px;   
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 
 .formulario button p{
 	color: var(--button-color); 
+  font-size: 2rem;
+  vertical-align: center;
+  margin: 0%;
 }
 
 
@@ -1032,8 +1052,16 @@ h3 {
 
 
 .formulario p{
-	font-size: 14px; 
+	font-size: 2rem; 
 	color: var(--text-color); 
+}
+
+.formulario input {
+  font-size: 1.5rem;
+}
+
+.formulario textarea {
+  font-size: 1.5rem;
 }
 
 
