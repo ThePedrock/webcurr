@@ -95,6 +95,30 @@ html {
   }
 }
 
+@media print {
+  header {
+    display: none;
+  }
+
+  #id_topNavBar, #id_portfolio, #id_certificates, #id_contact * {
+    display: none;
+  }
+
+  #id_identity h1, #id_identity h2 {
+    color: var(--text-color-01);
+  }
+
+  #id_curriculum_left_bar {
+    padding: 0%;
+    margin: 0%;
+    margin-top: 2%;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }

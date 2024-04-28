@@ -381,6 +381,7 @@ function populateNavigationBar() {
     const li = document.createElement('li');
     const img1 = document.createElement('img');
     const img2 = document.createElement('img');
+    const img3 = document.createElement('img');
 
     img1.src = "./resources/es.png";
     img1.alt = "spanish";
@@ -392,10 +393,19 @@ function populateNavigationBar() {
     img2.title = "english";
     img2.onclick = switchToEnglish;
 
+    img3.src = "./resources/print-icon.png";
+    img3.alt = "print";
+    img3.title = "print";
+    img3.style.filter = 'invert(1)';
+    img3.onclick = function() {
+        window.print();
+    };
+
     li.classList.add('topNavBarElement');
 
     li.appendChild(img1);
     li.appendChild(img2);
+    li.appendChild(img3);
     navigationBar.appendChild(li);
 
 }
