@@ -386,16 +386,19 @@ function populateNavigationBar() {
     img1.src = "./resources/es.png";
     img1.alt = "spanish";
     img1.title = "spanish";
+    img1.style.objectFit = "contain";
     img1.onclick = switchToSpanish;
 
     img2.src = "./resources/en.png";
     img2.alt = "english";
     img2.title = "english";
+    img2.style.objectFit = "contain";
     img2.onclick = switchToEnglish;
 
     img3.src = "./resources/print-icon.png";
     img3.alt = "print";
     img3.title = "print";
+    img3.style.objectFit = "contain";
     img3.style.filter = 'invert(1)';
     img3.onclick = function() {
         window.print();
