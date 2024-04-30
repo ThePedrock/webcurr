@@ -45,6 +45,15 @@
   --strong-font: 'Lora',serif;
 }
 
+/* @media (max-width: 600px) { */
+@media (orientation: portrait) {
+  :root {
+    --curriculum-background-color: rgb(0, 146, 56);
+    --upper-bar-navigation: #00713e;
+    --navigation-background-color: #bcf3c3;
+  }
+}
+
 /* Estilos para el encabezado */
 header {
   background-color: var(--secondary-color);
@@ -64,6 +73,12 @@ footer {
   text-align: center;
   padding: 2rem;
   font-size: 1rem;
+}
+
+@media (orientation: portrait) {
+  footer {
+    font-size: 2rem;
+  }
 }
 
 /* Estilos propios... */
@@ -278,6 +293,28 @@ h3 {
   margin-right: 0.5rem;
 }
 
+@media (orientation: portrait) {
+  .we_list {
+    font-size: 4rem;
+  }
+
+  .we_list_element {
+    transition: none;
+  }
+
+  .we_list_element:hover {
+    transform: none;
+  }
+
+  .we_list_element_title {
+    font-size: 4rem;
+  }
+
+  .we_list_element_year {
+    font-size: 4rem;
+  }
+}
+
 /* Education */
 
 .education {
@@ -349,6 +386,28 @@ h3 {
   margin-right: 0.5rem;
 }
 
+@media (orientation: portrait) {
+  .ed_list {
+    font-size: 4rem;
+  }
+
+  .ed_list_element {
+    transition: none;
+  }
+
+  .ed_list_element:hover {
+    transform: none;
+  }
+
+  .ed_list_element_title {
+    font-size: 4rem;
+  }
+
+  .ed_list_element_year {
+    font-size: 4rem;
+  }
+}
+
 /* ///////// */
 
 /* Language */
@@ -403,6 +462,28 @@ h3 {
 .ln_list_element_content span::before {
   content: '\2022';
   margin-right: 0.5rem; /*Ojo modificar. No valores absolutos*/
+}
+
+@media (orientation: portrait) {
+  .ln_list {
+    font-size: 4rem;
+  }
+
+  .ln_list_element {
+    transition: none;
+  }
+
+  .ln_list_element:hover {
+    transform: none;
+  }
+
+  .ln_list_element_title {
+    font-size: 4rem;
+  }
+
+  .ln_list_element_year {
+    font-size: 4rem;
+  }
 }
 
 /* ///////// */
@@ -580,6 +661,12 @@ h3 {
   transition: .4s, opacity 0.3s ease
 }
 
+@media (orientation: portrait) {
+  .nav {
+    display: none;
+  }
+}
+
 .hidden {
   width: 0%;
   height: 0%;
@@ -598,6 +685,12 @@ h3 {
   width: 80%;
   height: 100%;
   transition: .4s;
+}
+
+@media (orientation: portrait) {
+  .content {
+    width: 100%;
+  }
 }
 
 .fitScreen {
