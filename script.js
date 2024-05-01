@@ -338,6 +338,8 @@ function populateHeaders() {
     const workExperience = document.querySelector('#id_we_title');
     const education = document.querySelector('#id_ed_title');
     const languages = document.querySelector('#id_ln_title');
+    const skills2 = document.querySelector('#id_sk_title');
+    const contacts = document.querySelector('#id_cn_title');
     const contact = document.querySelector('#id_contactTitle');
     const skills = document.querySelector('#id_sillTitle');
     const Headers = curriculumHeaders[language];
@@ -348,6 +350,8 @@ function populateHeaders() {
     workExperience.textContent = Headers.workExperience.toUpperCase();
     education.textContent = Headers.education.toUpperCase();
     languages.textContent = Headers.languages.toUpperCase();
+    skills2.textContent = Headers.skills.toUpperCase();
+    contacts.textContent = Headers.contact.toUpperCase();
     contactTitle.textContent = Headers.contact;
     skillsTitle.textContent = Headers.skills;
 
@@ -416,16 +420,20 @@ function populateNavigationBar() {
 function populatePerson() {
     const personName = document.querySelector('#id_name');
     const personTitle = document.querySelector('#id_title');
+    const personDesc = document.querySelector('#id_desc');
     const personArray = dataJSON.person[language];
 
     const name = document.createElement('h1');
     const title = document.createElement('h2');
+    const desc = document.createElement('h2');
 
     name.textContent = personArray.name.first + " " + personArray.name.middle + " " + personArray.name.last;
     title.textContent = personArray.title;
+    desc.textContent = personArray.description;
 
     personName.appendChild(name);
     personTitle.appendChild(title);
+    personDesc.appendChild(desc);
 }
 
 function populateSkillList() {
@@ -538,6 +546,17 @@ function populateLanguage() {
     })
 }
 
+function populateSkills() {
+    const skillList = document.querySelector('#id_skills');
+    const skillArray = dataJSON.skills[language];
+
+    skillArray.forEach(element => {
+        const p = document.createElement('p');
+        p.textContent = element;
+        skillList.appendChild(p);
+    });
+}
+
 function populateDescription() {
     const description = document.querySelector('#id_description');
     const descriptionArray = dataJSON.person[language];
@@ -598,6 +617,11 @@ function emptyLanguage() {
     languageList.innerHTML = '';    
 }
 
+function emptySkills() {
+    const languageList = document.querySelector('#id_skills');
+    languageList.innerHTML = '';     
+}
+
 function emptyDescription() {
     const description = document.querySelector('#id_description');
     description.innerHTML = '';
@@ -611,7 +635,8 @@ function populateCurriculum() {
     populateSkillList();
     populateWorkExperience();
     populateEducation();
-    populateLanguage();    
+    populateLanguage();
+    populateSkills();
 }
 
 function emptyCurriculum() {
@@ -623,6 +648,7 @@ function emptyCurriculum() {
     emptyWorkExperience();
     emptyEducation();
     emptyLanguage();
+    emptySkills();
 }
 
 function populateProjects() {
