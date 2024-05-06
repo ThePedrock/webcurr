@@ -966,33 +966,6 @@ h3 {
   box-shadow: 0 0 20px rgba(0, 0, 0, 1); /* Sombra: desplazamientoX desplazamientoY desenfoque color */
 }
 
-@media (orientation: portrait) {
-  .portfolio {
-    height: 100%;
-  }
-
-  .porfolioContainer {
-    grid: none
-  }
-
-  .projectCard {
-    width: 95rem;
-    height: 75rem;
-  }
-
-  .projectCardName {
-    font-size: 7rem;
-  }
-
-  .projectCardSkills span {
-    font-size: 5rem;
-  }
-
-  .repositoryButton {
-    font-size: 5rem;
-  }
-}
-
 .projectCard:hover {
   animation: zoomOut 0.3s ease-out forwards;
 }
@@ -1141,6 +1114,33 @@ h3 {
   background-color: var(--repository-button-background-color);
   color: var(--repository-button-color);
   border-color: var(--repository-button-border-color);
+}
+
+@media (orientation: portrait) {
+  .portfolio {
+    height: 100%;
+  }
+
+  .porfolioContainer {
+    grid: none
+  }
+
+  .projectCard {
+    width: 95rem;
+    height: 75rem;
+  }
+
+  .projectCardName {
+    font-size: 7rem;
+  }
+
+  .projectCardSkills span {
+    font-size: 5rem;
+  }
+
+  .repositoryButton {
+    font-size: 5rem;
+  }
 }
 
 /* CERTIFICATES */
