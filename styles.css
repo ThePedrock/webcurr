@@ -966,6 +966,21 @@ h3 {
   box-shadow: 0 0 20px rgba(0, 0, 0, 1); /* Sombra: desplazamientoX desplazamientoY desenfoque color */
 }
 
+@media (orientation: portrait) {
+  .portfolio {
+    height: 100%;
+  }
+
+  .porfolioContainer {
+    grid: none
+  }
+
+  .projectCard {
+    width: 65rem;
+    height: 50rem;
+  }
+}
+
 .projectCard:hover {
   animation: zoomOut 0.3s ease-out forwards;
 }
@@ -1185,6 +1200,17 @@ h3 {
   justify-content: center;
   text-align: center;
   font-family: var(--strong-font);
+}
+
+@media (orientation: portrait) {  
+  .certificatesContainer {
+    flex-direction: column
+  }
+
+  .certificate {
+    width: 65rem;
+    height: 50rem;
+  }
 }
 
 /* CONTACT FORM */
