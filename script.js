@@ -593,8 +593,10 @@ function emptyNavigationBar() {
 function emptyPerson() {
     const personName = document.querySelector('#id_name');
     const personTitle = document.querySelector('#id_title');
+    const personDesc = document.querySelector('#id_desc');
     personName.innerHTML = '';
     personTitle.innerHTML = '';
+    personDesc.innerHTML = '';
 }
 
 function emptySkillList() {
