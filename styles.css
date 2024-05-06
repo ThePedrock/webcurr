@@ -976,8 +976,20 @@ h3 {
   }
 
   .projectCard {
-    width: 65rem;
-    height: 50rem;
+    width: 95rem;
+    height: 75rem;
+  }
+
+  .projectCardName {
+    font-size: 7rem;
+  }
+
+  .projectCardSkills span {
+    font-size: 5rem;
+  }
+
+  .repositoryButton {
+    font-size: 5rem;
   }
 }
 
@@ -1208,8 +1220,12 @@ h3 {
   }
 
   .certificate {
-    width: 65rem;
-    height: 50rem;
+    width: 95rem;
+    height: 75rem;
+  }
+
+  .certificateName {
+    font-size: 7rem;
   }
 }
 
@@ -1351,4 +1367,36 @@ h3 {
 .formulario textarea:focus{
 	outline:0;
 	border: 1px solid var(--focused-color);
+}
+
+@media (orientation: portrait) {
+  .contact_form {
+    width: 90%;
+  }
+
+  .formulario h1 {
+    font-size: 64px;
+  }
+
+  .formulario p {
+    font-size: 3rem;
+  }
+
+  .formulario input {
+    width: 90%;
+    font-size: 3rem;
+  }
+
+  .formulario textarea {
+    width: 90%;
+    font-size: 3rem;
+  }
+
+  .formulario button {
+    width: 90%;
+  }
+
+  .formulario button p {
+    font-size: 3rem;
+  }
 }
