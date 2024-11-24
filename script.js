@@ -139,11 +139,28 @@ const dataJSON = {
     }],
     "workExperience":[{
         "english":{
+            "company": "SoftProject",
+            "companyLink": "https://www.softproject.de/en/",
+            "jobPosition": "Integration Engineer",
+            "startDate": "Dec. 2024",
+            "endDate": "Current",
+            "workDescription": ["Responsible for implementing and optimizing system integrations to automate business processes.","Developing and configuring workflows, connecting IT systems through APIs, and ensuring seamless data exchange between platforms.","Analyzing business requirements and delivering tailored solutions."]
+        },
+        "spanish":{
+            "company": "SoftProject",
+            "companyLink": "https://www.softproject.de/es/",
+            "jobPosition": "Ingeniero de Integración de Sistemas",
+            "startDate": "2024 Dic.",
+            "endDate": "Actualmente",
+            "workDescription": ["Responsable de implementar y optimizar integraciones de sistemas para automatizar procesos empresariales.","Desarrollo y configuración de flujos de trabajo, conexión de sistemas TI mediante APIs y garantizar un intercambio fluido de datos entre plataformas.","Análisis de requisitos empresariales y ofrecer soluciones personalizadas."]
+        }
+    },{
+        "english":{
             "company": "Solera, Inc.",
             "companyLink": "https://www.solera.com/",
             "jobPosition": "Senior Software Solutions Engineer",
             "startDate": "Nov. 2020",
-            "endDate": "Current",
+            "endDate": "Dec. 2024",
             "workDescription": ["Professional product support using the company's own business rule engine that applies XML+JS, XSL, and Apache FreeMarker technologies.", "Ad hoc solutions using Python or Powershell.", "Agile continous delivery."]
         },
         "spanish":{
@@ -151,7 +168,7 @@ const dataJSON = {
             "companyLink": "https://www.solera.com/",
             "jobPosition": "Ingeniero Senior de Soluciones de Software",
             "startDate": "2020 Nov.",
-            "endDate": "Actualmente",
+            "endDate": "2024 Dic.",
             "workDescription": ["Soporte profesional de producto empleando el motor de reglas de negocio propio de empresa que aplica tecnología XML+JS, XSL y Apache FreeMarker.", "Soluciones adhoc empleando Python o Powershell.", "Entrega continua, Agile."]
         }
     },{
