@@ -158,18 +158,18 @@ const dataJSON = {
         "english":{
             "company": "Solera, Inc.",
             "companyLink": "https://www.solera.com/",
-            "jobPosition": "Senior Software Solutions Engineer",
+            "jobPosition": "Senior Integration Engineer (Senior Configurator Engineer)",
             "startDate": "Nov. 2020",
             "endDate": "Dec. 2024",
-            "workDescription": ["Professional product support using the company's own business rule engine that applies XML+JS, XSL, and Apache FreeMarker technologies.", "Ad hoc solutions using Python or Powershell.", "Agile continous delivery."]
+            "workDescription": ["Professional product support using the company's own business rule engine that applies XML+JS, XSL, and Apache FreeMarker technologies.", "Ad hoc solutions using Python or Powershell.", "Agile continous delivery. Product deployment with Jenkins"]
         },
         "spanish":{
             "company": "Solera, Inc.",
             "companyLink": "https://www.solera.com/",
-            "jobPosition": "Ingeniero Senior de Soluciones de Software",
+            "jobPosition": "Ingeniero de Integración Senior (Senior Configurator Engineer)",
             "startDate": "2020 Nov.",
             "endDate": "2024 Dic.",
-            "workDescription": ["Soporte profesional de producto empleando el motor de reglas de negocio propio de empresa que aplica tecnología XML+JS, XSL y Apache FreeMarker.", "Soluciones adhoc empleando Python o Powershell.", "Entrega continua, Agile."]
+            "workDescription": ["Soporte profesional de producto empleando el motor de reglas de negocio propio de empresa que aplica tecnología XML+JS, XSL y Apache FreeMarker.", "Soluciones adhoc empleando Python o Powershell.", "Entrega continua, Agile. Despligue de producto, Jenkins"]
         }
     },{
         "english":{
